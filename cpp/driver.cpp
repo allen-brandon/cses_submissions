@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
     }
 
     double elapsed = chrono::duration<double, milli>(chrono::steady_clock::now() - start).count();
-    cout << "Finished in " << fixed << setprecision(2) << elapsed << " ms\n";
+    cout << "\n" << "Finished in " << fixed << setprecision(2) << elapsed << " ms\n";
     fs::remove(exe);
     return fut.get();
 }

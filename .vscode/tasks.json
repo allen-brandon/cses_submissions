@@ -4,7 +4,7 @@
         {
             "label": "Build ▶ Run ▶ Cleanup",
             "type": "shell",
-            "command": "g++-14 -std=c++17 -O2 _driver.cpp -o driver && ./driver ${fileBasenameNoExtension}",
+            "command": "g++-14 -std=c++17 -O2 driver.cpp -o driver && ./driver ${fileBasenameNoExtension}",
             "options": {
                 "cwd": "${fileDirname}"
             },

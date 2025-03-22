@@ -27,3 +27,7 @@ using namespace __gnu_pbds;
 #define lli(_) ll _; cin >> _;
 ll inf = 1000000007;
 ll mod = 1000000007;
+
+int main() {
+    
+}
