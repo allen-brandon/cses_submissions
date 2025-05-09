@@ -1,11 +1,13 @@
 using namespace std;
 #include <iostream>
 #include <vector>
+#include <array>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
 #include <set>
 #include <deque>
+#include <queue>
 #include <numeric>
 #include <bitset>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -25,9 +27,10 @@ using namespace __gnu_pbds;
 #define si(_) string _; cin >> _;
 #define ii(_) int _; cin >> _;
 #define lli(_) ll _; cin >> _;
-ll inf = 1000000007;
+ll inf = 151515151515151;
 ll mod = 1000000007;
 
 int main() {
+    fio;
     
 }

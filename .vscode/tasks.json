@@ -1,24 +1,24 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Build ▶ Run ▶ Cleanup",
-            "type": "shell",
-            "command": "g++-14 -std=c++17 -O2 driver.cpp -o driver && ./driver ${fileBasenameNoExtension}",
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true,
-            },
-            "presentation": {
-                "echo": false,
-                "reveal": "always",
-                "panel": "shared",
-                "showReuseMessage": false
-            },
-            "problemMatcher": []
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build ▶ Run ▶ Cleanup",
+      "type": "shell",
+      "command": "g++-14 -std=c++17 -O2 driver.cpp -o driver && ./driver ${fileBasenameNoExtension}",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    }
+  ]
 }
