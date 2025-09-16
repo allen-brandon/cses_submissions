@@ -2,6 +2,19 @@
     "configurations": [
         
         {
+            "name": "Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "Direct Debug Builder",
+        },
+        {
             "name": "C/C++: g++-13 build and debug active file",
             "type": "cppdbg",
             "request": "launch",

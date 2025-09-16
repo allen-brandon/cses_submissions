@@ -80,8 +80,6 @@ class segment_tree {
         lb = l>>1;
         rb = r_inclusive>>1;
         while (lb) {
-            // a[lb] = max(a[lb*2],a[lb*2+1]);
-            // a[rb] = max(a[rb*2],a[rb*2+1]);
             a[lb] = max(a[lb*2]+pend[lb*2],a[lb*2+1]+pend[lb*2+1]);
             a[rb] = max(a[rb*2]+pend[rb*2],a[rb*2+1]+pend[rb*2+1]);
             lb>>=1;
