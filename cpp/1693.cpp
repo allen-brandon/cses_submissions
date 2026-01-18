@@ -29,9 +29,63 @@ array<pair<int,int>,4> didj = {{{-1,0},{0,1},{1,0},{0,-1}}};
 array<string,2> ny = {"No","Yes"};
 ll inf = 151515151515151;
 ll mod = 1000000007;
+vi adj[200001];
+int id[200001];
+int ind[200001];
 
 int main() {
     USE_INPUT_FILE("_input.txt");
     fio;
-    
+    ii(n); ii(m);
+    fill_n(adj,n, vi());
+    fill_n(ind,n,0);
+    fill_n(id,n,0);
+    set<pair<int,int>> test;
+    fr(i,0,m) {
+        ii(u); ii(v);
+        // print(u << " " << v);
+        test.emplace(u,v);
+        u--; v--;
+        ind[u]++;
+        ind[v]--;
+        adj[u].push_back(v);
+    }
+    if (ind[0]!=1 || ind[n-1]!=-1) {
+        print("IMPOSSIBLE");
+        return 0;
+    }
+    fr(i,1,n-1) {
+        if (ind[i]!=0) {
+            print("IMPOSSIBLE");
+            return 0;
+        }
+    }
+    fr(u,0,n) {
+        sort(adj[u].begin(),adj[u].end(),[u](int v1, int v2) {
+            return adj[v1].size()-id[v1]>adj[v2].size()-id[v2];
+        });
+    }
+    vi res;
+    res.reserve(m+1);
+    stack<int> st;
+    st.push(0);
+    while (!st.empty()) {
+        int u = st.top();
+        if (id[u]==adj[u].size()) {
+            res.push_back(u);
+            st.pop();
+        } else {
+            int v = adj[u][id[u]++];
+            st.push(v);
+        }
+    }
+    if (res.size()!=m+1) {
+        print("IMPOSSIBLE")
+        return 0;
+    }
+    fr(i,0,m+1) {
+        res[i]++;
+    }
+    reverse(res.begin(),res.end());
+    printv(res);
 }
